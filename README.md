@@ -1,26 +1,38 @@
-# Ember-owner-test-utils
+# Ember Owner Test Utils
 
-This README outlines the details of collaborating on this Ember addon.
+This is an addon that is intended to provide an easy mechanism to access and override Ember owner APIs.
 
-## Installation
+# Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-owner-test-utils`
 
-## Running
+# Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+## Register
 
-## Running Tests
+I find this is most useful for dealin with services that hit the network.  It allows you to declaratively specify what a given registration is responsible for inside the test file itself.
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+At the top of your `acceptance|integration|unit` test import the `register` helper with the following line:
 
-## Building
+```js
+import { register } from 'ember-owner-test-utils/test-support/register';
+```
 
-* `ember build`
+Then from within any place that has a test context (ie inside a `beforeEach` or `test`) you may set a new registration with the following:
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+```js
+test('it calls foo on the foo service', function(assert){
+  assert.expect(1);
+
+  register(this, 'service:foo', Ember.Service.extend({
+    foo() {
+      assert.ok(true);
+    }
+  }));
+
+  visit('/thing');
+  click('.foo-button-that-triggers-expected-service');
+});
+```
+
+This signature can be used in all forms of Ember tests.
