@@ -66,3 +66,9 @@ test('allows the registration of components', function(assert) {
 ```
 
 Hat tip (🎩) to [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper) on this one.  This is very useful for testing complex interactions without needing to create unnecessary files in your addon's dummy folder.
+
+### Thanks
+
+Special thanks to @rwjblue for help with 1.13.13 support.  Was a difficult thing to track down.  :beers:  If you'd like to hear @cowboyd and myself talk about this in more depth you can check it out at this episode of ember weekend:
+
+[Ember Weekend: Bug Integrat](https://emberweekend.com/episodes/bug-integrat)
