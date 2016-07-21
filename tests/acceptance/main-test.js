@@ -21,3 +21,17 @@ test('allows the overriding of non-existant registrations', function(assert) {
   visit('/thing');
   click('.my-button');
 });
+
+test('allows the overriding of existing registrations', function(assert) {
+  assert.expect(1);
+
+  register(this, 'service:bar', Service.extend({
+      bar() {
+        assert.ok(true);
+      }
+    })
+  );
+
+  visit('/existing-service-test');
+  click('.existing-service');
+});

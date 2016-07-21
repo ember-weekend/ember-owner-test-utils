@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('thing');
+  this.route('existing-service-test');
 });
 
 export default Router;
