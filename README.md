@@ -39,3 +39,26 @@ test('it calls foo on the foo service', function(assert){
 ```
 
 This signature can be used in all forms of Ember tests.
+
+You can even use it to make a registration on a component that never existed.  Like so:
+
+```js
+test('allows the registration of components', function(assert) {
+  assert.expect(1);
+
+ register(this, 'template:components/my-component', hbs`<button class="do-it" {{ action 'foo' }}>GO!</button>`);
+
+  register(this, 'component:my-component', Component.extend({
+      actions: {
+        foo() { assert.ok(true); }
+      }
+    })
+  );
+
+  this.render(hbs`{{my-component}}`);
+
+  this.$('button').click();
+});
+```
+
+Hat tip to [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper) on this one.  This is very useful for testing complex interactions without needing to create unnecessary files in your addon's dummy folder.
