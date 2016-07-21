@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
-    "doc": "doc",
     "test": "tests"
   },
   "scripts": {
@@ -11,11 +10,14 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rondale-sc/ember-owner-test-utils.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Jonathan Jackson",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -47,5 +49,10 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/rondale-sc/ember-owner-test-utils/issues"
+  },
+  "homepage": "https://github.com/rondale-sc/ember-owner-test-utils#readme"
 }
