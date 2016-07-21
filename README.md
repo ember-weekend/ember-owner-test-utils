@@ -40,9 +40,13 @@ test('it calls foo on the foo service', function(assert){
 
 This signature can be used in all forms of Ember tests.
 
+## Playing Make Believe
+
 You can even use it to make a registration on a component that never existed.  Like so:
 
 ```js
+// See here for more of the test:
+// https://github.com/rondale-sc/ember-owner-test-utils/blob/master/tests/integration/my-component-test.js
 test('allows the registration of components', function(assert) {
   assert.expect(1);
 
@@ -61,4 +65,4 @@ test('allows the registration of components', function(assert) {
 });
 ```
 
-Hat tip to [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper) on this one.  This is very useful for testing complex interactions without needing to create unnecessary files in your addon's dummy folder.
+Hat tip (🎩) to [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper) on this one.  This is very useful for testing complex interactions without needing to create unnecessary files in your addon's dummy folder.
