@@ -1,5 +1,7 @@
 # Ember Owner Test Utils
 
+[![Build Status](https://travis-ci.org/rondale-sc/ember-owner-test-utils.svg?branch=master)](https://travis-ci.org/rondale-sc/ember-owner-test-utils)
+
 This is an addon that is intended to provide an easy mechanism to access and override Ember owner APIs.
 
 # Installation
