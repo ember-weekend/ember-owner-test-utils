@@ -3,10 +3,11 @@ import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 import Ember from 'ember';
 
 import { register } from 'ember-owner-test-utils/test-support/register';
+import { lookup } from 'ember-owner-test-utils/test-support/lookup';
 
 const { Service } = Ember;
 
-moduleForAcceptance('Acceptance | main');
+moduleForAcceptance('Acceptance | register');
 
 test('allows the overriding of non-existant registrations', function(assert) {
   assert.expect(1);
@@ -34,4 +35,13 @@ test('allows the overriding of existing registrations', function(assert) {
 
   visit('/existing-service-test');
   click('.existing-service');
+});
+
+moduleForAcceptance('Acceptance | lookup');
+
+test('allows lookup of existing registrations', function(assert) {
+  assert.expect(1);
+
+  const actual = lookup(this, 'service:bar').get('lookupTestProperty');
+  assert.equal(actual, 'hello');
 });
