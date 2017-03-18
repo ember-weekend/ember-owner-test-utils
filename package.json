@@ -1,6 +1,6 @@
 {
   "name": "ember-owner-test-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "test": "tests"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rondale-sc/ember-owner-test-utils.git"
+    "url": "git+https://github.com/ember-weekend/ember-owner-test-utils.git"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -52,7 +52,7 @@
   },
   "main": "index.js",
   "bugs": {
-    "url": "https://github.com/rondale-sc/ember-owner-test-utils/issues"
+    "url": "https://github.com/ember-weekend/ember-owner-test-utils/issues"
   },
-  "homepage": "https://github.com/rondale-sc/ember-owner-test-utils#readme"
+  "homepage": "https://github.com/ember-weekend/ember-owner-test-utils#readme"
 }
